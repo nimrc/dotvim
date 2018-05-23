@@ -14,6 +14,7 @@ set guioptions-=L
 set guioptions-=r
 set guioptions-=R
 set nocompatible               " 设置 vim 为不兼容 vi 模式
+set guifont=Monaco:h14
 
 "Toggle Menu and Toolbar
 set guioptions-=m
@@ -182,3 +183,4 @@ let g:phpcomplete_mappings = {
    \ 'jump_to_def_vsplit': '<C-W><C-\>',
    \}
 
+autocmd BufNewFile,BufReadPre *.java nmap <leader>rn :!javac %<cr>:!java %:r<cr>
