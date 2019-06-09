@@ -43,6 +43,7 @@ filetype off                   " 必须的
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'morhetz/gruvbox'
 Plug 'junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -58,6 +59,7 @@ Plug 'gosukiwi/vim-atom-dark' " 主题
 Plug 'terryma/vim-multiple-cursors' " 多行选取
 Plug 'shougo/neocomplete.vim'
 Plug 'shawncplus/phpcomplete.vim'
+Plug 'sainnhe/vim-color-forest-night'
 
 call plug#end()
 
@@ -70,15 +72,12 @@ let g:jsx_pragma_required = 0
 " -------------airline settings---------------
 set laststatus=2
 let g:airline_powerline_fonts=1
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"":""}',
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '<', 'right': '>' }
-      \ }
 let g:airline_symbols = {}
+
+let g:lightline = {}
+let g:lightline.colorscheme = 'forest_night'
+
+set termguicolors
 
 " -------------fzf and ag-settings---------------------
 if executable('ag')
@@ -97,7 +96,8 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-colorscheme atom-dark-256
+" colorscheme atom-dark-256
+colorscheme forest-night
 
 """"""""""
 
