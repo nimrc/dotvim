@@ -71,7 +71,7 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 " Auto Complete
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 
 Plug 'vim-scripts/taglist.vim'
 
@@ -96,6 +96,9 @@ Plug 'terryma/vim-multiple-cursors' " 多行选取
 Plug 'shougo/neocomplete.vim'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'w0rp/ale' " 实时动态检查
+
+Plug 'tomasiser/vim-code-dark'
+
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -195,22 +198,24 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-color atom-dark-256
+"color atom-dark-256
+color codedark
+"color nord
 
 """"""""""
 
 " ===
 " === You Complete ME
 " ===
-nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap g/ :YcmCompleter GetDoc<CR>
-nnoremap gt :YcmCompleter GetType<CR>
-nnoremap gr :YcmCompleter GoToReferences<CR>
-let g:ycm_autoclose_preview_window_after_completion=0
-let g:ycm_autoclose_preview_window_after_insertion=1
-let g:ycm_use_clangd = 0
-let g:ycm_python_interpreter_path = "/usr/local/bin/python3"
-let g:ycm_python_binary_path = "/usr/local/bin/python3"
+"nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"nnoremap g/ :YcmCompleter GetDoc<CR>
+"nnoremap gt :YcmCompleter GetType<CR>
+"nnoremap gr :YcmCompleter GoToReferences<CR>
+"let g:ycm_autoclose_preview_window_after_completion=0
+"let g:ycm_autoclose_preview_window_after_insertion=1
+"let g:ycm_use_clangd = 0
+"let g:ycm_python_interpreter_path = "/usr/local/bin/python3"
+"let g:ycm_python_binary_path = "/usr/local/bin/python3"
 
 
 " Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
