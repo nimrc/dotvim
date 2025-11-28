@@ -19,7 +19,7 @@ set ruler                     "可显示最后一行的状态
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-set smartindent
+set expandtab
 set guioptions-=e
 set guioptions-=l
 set guioptions-=L
