@@ -109,14 +109,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'preservim/tagbar'
 
 " Editing helpers
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'editorconfig/editorconfig-vim'
+
+" Project / session
+Plug 'airblade/vim-rooter'
+Plug 'tpope/vim-obsession'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Lint / format
 Plug 'dense-analysis/ale'
@@ -222,6 +230,44 @@ let g:lightline = {
 " ====================
 nnoremap <leader>z :Goyo<CR>
 let g:goyo_width = 120
+
+" ====================
+" Project / Session
+" ====================
+let g:rooter_patterns = ['.git', 'go.mod', 'package.json', 'pyproject.toml', 'Cargo.toml', 'Makefile']
+let g:rooter_silent_chdir = 1
+
+nnoremap <leader>ss :Obsession<CR>
+nnoremap <leader>sx :Obsession!<CR>
+
+" ====================
+" Git workflow
+" ====================
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gp :Git push<CR>
+nnoremap <leader>gl :Git pull<CR>
+nnoremap <leader>gb :Git blame<CR>
+nnoremap <leader>gd :Gvdiffsplit<CR>
+nnoremap <leader>ghp :GitGutterPreviewHunk<CR>
+nnoremap <leader>ghs :GitGutterStageHunk<CR>
+nnoremap <leader>ghu :GitGutterUndoHunk<CR>
+nnoremap ]h :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
+
+" ====================
+" Tagbar
+" ====================
+nnoremap <leader>m :TagbarToggle<CR>
+let g:tagbar_width = 35
+
+" ====================
+" Terminal
+" ====================
+if has('terminal')
+  nnoremap <leader>tt :botright split term://$SHELL<CR>
+  tnoremap <Esc> <C-\\><C-n>
+endif
 
 " ====================
 " ALE
